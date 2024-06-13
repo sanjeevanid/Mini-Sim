@@ -10,10 +10,11 @@ const Header = ({allPageData, setCurrentPageData}) => {
       const updateProgress = () => {    // Function for calculating progress value.
         let totalPages = Object?.values(allPageData)?.length;
         
-        if(visitedPages == 1){
-          visitedPages = 0
+        let totalVisitedPages = visitedPages.length;
+        if(totalVisitedPages == 1){
+          totalVisitedPages = 0
         }
-        const calculateProgress = (visitedPages.length / totalPages) * 100;
+        const calculateProgress = (totalVisitedPages / totalPages) * 100;
           setProgress(calculateProgress);
       };
    

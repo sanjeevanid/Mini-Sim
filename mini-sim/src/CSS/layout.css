@@ -1,0 +1,219 @@
+#root {
+    width: 990px;
+    margin: auto;
+    outline: 1px solid #cccccc;
+}
+p, span {
+    font-size: 16px;
+    font-family: Open Sans;
+    font-weight: 400;
+}
+
+/* Header */
+#header-title {
+    display: flex;
+    top: 0;
+    border-bottom: 1px solid #cccccc;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+.pageaction ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    gap: 20px;
+}
+.pageaction ul li .ui.button {
+    margin: 0;
+    padding: 0;
+}
+.LogoImg {
+    width: 12%;
+    height: 10%;
+    position: relative;
+    top: 5px;
+    left: 20px;
+}
+#header-title h1 {
+    margin: 11px 2%;
+    width: 70%;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Open Sans Semibold';
+    text-align: center;
+}
+.ui.button {
+    background: transparent;
+}
+.ui.progress .bar {
+    min-width: 0;
+}
+.progress_container{
+    width: 45%;
+
+}
+.progress_container .ui.tiny.progress {
+    margin: 0;
+}
+#progressInnrDiv {
+    width: 100px;
+    padding-top: 7px;
+    margin-left: 160px;
+    font-size: 14px;
+}
+.header-container {
+    margin: 0% 6%;
+}
+.menuImg {
+    width: 25px;
+}
+.menu_button ul {
+    position: absolute;
+    z-index: 1;
+    background: white;
+    list-style-type: none;
+    width: 240px;
+    border: 1px solid #33A7C0;
+    margin: 0;
+    padding: 0;
+}
+.menuBtn:focus, .menuBtn.active {
+    background: transparent !important;
+    border: 1px solid #33A7C0 !important;
+    border-radius: 5px 5px 0px 0px !important;
+    border-bottom: none !important;
+    background-image: url('src\assets\menu-rollover.png');
+}
+.menu_button {
+    position: relative;
+    top: 5px;
+}
+.menuBtn {
+    padding: 10px !important;
+    margin: 0 !important;
+}
+.menu_button ul li {
+    padding: 5px 10px;
+}
+.menu_button ul a {
+    color: black;
+}
+.menu_button ul li a:hover {
+    color: #33A7C0;
+    cursor: context-menu;
+}
+.menuBtn ul li a:focus {
+    border: 2px solid #33A7C0;
+    background-color: #FFF;
+    padding: 2px;
+}
+.blankDiv{
+    width: 45.5px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 100;
+    margin-left: 0.5px;
+    top: 39px;
+}
+
+/* Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 300px; 
+    margin: 10px 0px;
+}
+.footer-navigation {
+    border-top: 1px solid #CCCCCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#linknext, #linkprevious {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px; 
+}
+#linknext img, #linkprevious img {
+    margin: 0 5px;
+}
+#linknext span, #linkprevious span {
+    color: #0C75A2;
+    font-weight: bold;
+}
+.prev, .next {
+    display: flex;
+    align-items: center;
+}
+ 
+/* Screen Page */
+#wrapper {
+    margin: 2% 6%;
+}
+.src-img {
+    float: right;
+    margin-left: 15px;
+}
+.dummy-img {
+    width: 300px;
+}
+.ui.button:hover {
+    background: transparent;
+}
+
+/* Question Page */
+.option-group {
+    margin: 20px;
+    font-size: 16px;
+}
+.option {
+    margin: 5% 2%;
+}
+.option-text {
+    margin-left: 20px;
+    cursor: pointer;
+}
+.btnSubmit {
+    text-align: center;
+}
+.SubmitBtn {
+    width: 10%;
+    height: 30px;
+    border-radius: 5px;
+    background: #0d4371;
+    color: white;
+    border: 1px solid #007889;
+    font-size: 16px;
+    font-family: Open Sans;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.selectedOption {
+    border: 2px solid #003057 ; 
+    padding: 0.5%;
+  }
+  .bestOptionFb p {
+    font-weight: bold !important;
+    color:#16561d;
+  }
+  .okayOptionFb p {
+    font-weight: bold !important;
+    color:#578301;
+  }
+  .incorrOptionFb p {
+    font-weight: bold !important;
+    color:#b90000;
+  }

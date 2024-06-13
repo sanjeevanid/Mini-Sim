@@ -68,11 +68,11 @@ const Header = ({allPageData, setCurrentPageData}) => {
 
         <div className='pageaction'>
             <ul>
-                <li>
+                {/* <li>
                     <button className='ui button'>
                         <img src='src/assets/play.png' alt='Play' />
                     </button>
-                </li>
+                </li> */}
                 <li>
                     <button className='ui button'>
                         <img src='src/assets/transcript.png' alt='Transcript' />

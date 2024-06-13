@@ -59,6 +59,7 @@ function App() {
       
     }
   },[currentPageData])
+  
   return (
     <>
       <Header allPageData={allPageData} setCurrentPageData={setCurrentPageData}/>

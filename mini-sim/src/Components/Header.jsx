@@ -18,22 +18,19 @@ const Header = ({allPageData, setCurrentPageData}) => {
           setProgress(calculateProgress);
       };
    
-    // Call the function when page loaded.
-      useEffect(() => {
+      useEffect(() => {    // Call the function when page loaded.
           updateProgress();
       }, [allPageData]);
 
       useEffect(() => {
         function handleMenuClick(e) {
-          debugger;
-          // if (!(window.$(e.target).closest(".menuBtn")))
           if (!(e.target.classList.contains("menuImg") || e.target.classList.contains("menuBtn"))) {
               setIsMenuOpen(false);
         }
       }
-        document.addEventListener('click', handleMenuClick);
+      document.addEventListener('click', handleMenuClick);
         return () => {
-          document.removeEventListener('click', handleMenuClick);
+              document.removeEventListener('click', handleMenuClick);
           };
       }, []);
 
@@ -59,15 +56,6 @@ const Header = ({allPageData, setCurrentPageData}) => {
            
           </ul>
         </div>
-
-        {/* <div className='progress_container'>
-          <div className='ui tiny progress'>
-            <div className='bar'>
-              <div className='progress'></div>
-              <div id="progressInnrDiv">Progress 0%</div>
-            </div>
-          </div>
-        </div> */}
 
         <div className='progress_container'>
           <div className='ui tiny progress'>

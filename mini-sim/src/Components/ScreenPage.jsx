@@ -2,10 +2,10 @@ import React from 'react'
 
 const ScreenPage = ({data}) => {
   return (
-    <div className='' id='wrapper'>
+    <div>
       <h2>{data?.heading}</h2>
       <div className='src-img'>
-        <img className='dummy-img' src={data?.image} />
+        <img className='dummy-img' src={data?.image} draggable="false" />
       </div>
       <div dangerouslySetInnerHTML={{__html: data?.pageDescription}}>
         

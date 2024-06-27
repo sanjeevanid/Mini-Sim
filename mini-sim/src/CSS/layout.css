@@ -3,7 +3,7 @@
     margin: auto;
     outline: 1px solid #cccccc;
 }
-p, span {
+p, span, ul li {
     font-size: 16px;
     font-family: Open Sans;
     font-weight: 400;
@@ -58,6 +58,9 @@ p, span {
     width: 45%;
 
 }
+.ui.tiny.progress .bar {
+    background-color: #0059A2;
+}
 .progress_container .ui.tiny.progress {
     margin: 0;
 }
@@ -79,16 +82,21 @@ p, span {
     background: white;
     list-style-type: none;
     width: 240px;
-    border: 1px solid #33A7C0;
+    border: 2px solid #33A7C0;
     margin: 0;
     padding: 0;
 }
-.menuBtn:focus, .menuBtn.active {
+.menuBtn:focus {
     background: transparent !important;
-    border: 1px solid #33A7C0 !important;
-    border-radius: 5px 5px 0px 0px !important;
-    border-bottom: none !important;
+    border: 2px solid #007889 !important;
+    border-radius: 5px !important;
     background-image: url('src\assets\menu-rollover.png');
+}
+.menuBtn.active {
+    border-bottom: none;
+    background: transparent !important;
+    border: 2px solid #33A7C0 !important;
+    border-radius: 5px 5px 0px 0px !important;
 }
 .menu_button {
     position: relative;
@@ -108,19 +116,58 @@ p, span {
     color: #33A7C0;
     cursor: context-menu;
 }
-.menuBtn ul li a:focus {
-    border: 2px solid #33A7C0;
+.menu_button ul li a:focus {
+    outline: none;
+    border: 2px solid #33A7C0 !important;
     background-color: #FFF;
     padding: 2px;
 }
+/* .menu_button ul li a:first-child {
+    border: 1px solid #4183c4;
+    padding: 2px;
+} */
 .blankDiv{
     width: 45.5px;
-    height: 1px;
+    height: 5px;
     background-color: #fff;
     position: absolute;
     z-index: 100;
-    margin-left: 0.5px;
-    top: 39px;
+    margin-left: 2px;
+    top: 40px;
+}
+.transBtn:focus, 
+.abtSimBtn:focus {
+    border: 2px solid #007889 !important;
+    border-radius: 5px !important;
+    padding: 5px !important;
+}
+#btnAbtSimClose, #btnTransClose {
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    background: #0d4371;
+    color: white;
+    border: 1px solid #007889;
+    font-size: 16px;
+    font-family: Open Sans;
+}
+.btnClose {
+    text-align: right;
+    margin-bottom: 15px;
+}
+.transcriptContent div {
+    border-top: 1px solid #c1c1c1;
+    padding-top: 10px;
+}
+.transcriptContent div:first-child {
+    border-top: none;
+}
+.abtSimContent, .transcriptContent {
+    border-bottom: 1px solid #c1c1c1;
+    margin-bottom: 20px;
+}
+.ui.button:focus {
+    background: transparent;
 }
 
 /* Footer */
@@ -156,6 +203,12 @@ p, span {
     display: flex;
     align-items: center;
 }
+#linkprevious:focus-visible,
+#linknext:focus-visible {
+    outline: 2px solid #007889 !important;
+    border-radius: 5px !important;
+    padding: 5px !important;
+}
  
 /* Screen Page */
 #wrapper {
@@ -188,7 +241,7 @@ p, span {
     text-align: center;
 }
 .SubmitBtn {
-    width: 10%;
+    width: 75px;
     height: 30px;
     border-radius: 5px;
     background: #0d4371;
@@ -204,16 +257,92 @@ p, span {
 .selectedOption {
     border: 2px solid #003057 ; 
     padding: 0.5%;
-  }
-  .bestOptionFb p {
+}
+.bestOptionFb p {
     font-weight: bold !important;
     color:#16561d;
-  }
-  .okayOptionFb p {
+}
+.okayOptionFb p {
     font-weight: bold !important;
     color:#578301;
-  }
-  .incorrOptionFb p {
+}
+.incorrOptionFb p {
     font-weight: bold !important;
     color:#b90000;
-  }
+}
+.SubmitBtn:focus,
+#btnTransClose:focus,
+#btnAbtSimClose:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 5px #007889;
+}
+
+/* Result page */
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: #307bbb !important;
+    stroke-linecap: square !important;
+}
+.CircularProgressbar .CircularProgressbar-text {
+    fill: black !important;
+}
+.circularProgress {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid #a1daea;
+}
+.prog1, .prog2 {
+    width: 120px;
+}
+.prgText1, .prgText2 {
+    margin-left: -3px;
+}
+.mainReportHeader{ 
+    display: flex;
+    border-bottom: 2px solid #a1daea;
+}
+.reportHeader {
+    padding: 0px;
+    display: inline-block;
+    width: 50%;
+}
+.reportHTitle {
+    padding: 0 2%;
+    width: 30%;
+    float: left;
+    border-right-style: solid;
+    border-width: 2px;
+    border-color: #007fa2;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+.reportHTitle span {
+    color: #007fa2;
+    font-size: 18px;
+    font-weight: bold;
+}
+#reportRetry {
+    padding: 1% 2% 0%;
+    display: flex;
+    margin-left: 8%;
+}
+.retryattemtDiv {
+    margin: 8px 15px 0px 0px;
+}
+#retryattemptText {
+    font-size: 14px;
+    width: 240px;
+}
+#btnRetry {
+    width: 88px;
+    height: 35px;
+    border-radius: 5px;
+    background: #0d4371;
+    color: white;
+    border: 1px solid #007889;
+    font-size: 16px;
+    font-family: Open Sans;
+    padding: 0;
+}

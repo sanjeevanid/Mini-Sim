@@ -1,7 +1,7 @@
 import React from 'react'
 import PageData from './PageData';
 
-const Footer = ({currentPageData, setCurrentPageData, allPageData, setAllPageData}) => {
+const Footer = ({currentPageData, setCurrentPageData, allPageData, setAllPageData, setIsAboutSimOpen, setIsTransOpen}) => {
 
   // Navigate to next page.
     const loadNextPage = ()=> {
@@ -9,7 +9,8 @@ const Footer = ({currentPageData, setCurrentPageData, allPageData, setAllPageDat
         let nextPageData = Object.values(allPageData).find((page)=>page.pageId == nextPageId);
         
         setCurrentPageData(nextPageData)
-
+        setIsAboutSimOpen(false)  //Close about sim content on next click if it is open.
+        setIsTransOpen(false)     //Close transcript content on next click if it is open.
     }
 
   // Navigate to previous page.
@@ -17,6 +18,8 @@ const Footer = ({currentPageData, setCurrentPageData, allPageData, setAllPageDat
         let currentPageId = currentPageData?.pageId;
         let prevPageData = Object.values(allPageData).find((page)=>page.nextPageId == currentPageId);
         setCurrentPageData(prevPageData)
+        setIsAboutSimOpen(false)  //Close about sim content on prev click if it is open.
+        setIsTransOpen(false)     //Close transcript content on prev click if it is open.
     }
     
   return (

@@ -18,6 +18,7 @@ const QuestionPage = ({data,setData,setAllPageData}) => {
   };
 
   const handleSubmit = () => {
+    debugger;
     setData((prevData)=>(
       {
         ...prevData,
@@ -25,14 +26,9 @@ const QuestionPage = ({data,setData,setAllPageData}) => {
       }
     ))
   }
+
  useEffect(()=>{
   if(data?.isQuestionAttempted){
-    // let newPageData = {
-    //   ...PageData,
-    //   [data.pageId] : {
-    //     ...data
-    //   }
-    // }
     setAllPageData((prevPageData)=>(
       {
         ...prevPageData,
@@ -45,11 +41,11 @@ const QuestionPage = ({data,setData,setAllPageData}) => {
  },[data?.isQuestionAttempted])
  
   return (
-    <div id='wrapper'>
+    <div>
       <h2>{data?.heading}</h2>
 
       <div className='src-img'>
-        <img className='dummy-img' src={data?.image} />
+        <img className='dummy-img' src={data?.image} draggable="false" />
       </div>
 
       <div dangerouslySetInnerHTML={{__html: data?.pageDescription}}>
@@ -57,17 +53,7 @@ const QuestionPage = ({data,setData,setAllPageData}) => {
     </div>
 
       <div className={`option-group ${!(data?.isQuestionAttempted)  ? '' : 'disabled'}`}>
-         {/* {
-            data?.options.map((option, index) => (
-            <div className='option'>
-                <label>
-                    <input type={data?.optionType} id={option?.optionId} data-score={option?.score}/>
-                    <span className="option-text" dangerouslySetInnerHTML={{__html: option?.optionText}}></span>
-                </label>
-             </div>
-             ))
-                  
-         } */}
+         
          {
             data?.options.map((option) => (
               <div className={`option ${data.selectedOptionId === option.optionId ? 'selectedOption' : ''}`} key={option.optionId}>
@@ -88,11 +74,17 @@ const QuestionPage = ({data,setData,setAllPageData}) => {
       </div>
 
       <div className={`btnSubmit ${(data?.selectedOptionId && !data?.isQuestionAttempted)  ? '' : 'disabled'}`} >
-            <button className='SubmitBtn' onClick={handleSubmit}>Submit</button>
+            <button className='SubmitBtn' onClick={handleSubmit} 
+            onKeyDown={(event)=>{
+              if(event.key == "Enter"){
+                handleSubmit();
+              }
+            }}
+            >Submit</button>
       </div>
 
       {data?.isQuestionAttempted && (
-        <div className={`feedback ${(selected_option_score == 0) ? 'incorrOptionFb' : (selected_option_score == 3)? 'okayOptionFb' : 'bestOptionFb'}`}>
+        <div className={`feedback ${(selected_option_score == 0) ? 'incorrOptionFb' : (selected_option_score == 3) ? 'okayOptionFb' : 'bestOptionFb'}`}>
             <p>{data?.options?.find((option) => option.optionId === data?.selectedOptionId)?.feedback}</p>
 
         </div>
@@ -103,3 +95,4 @@ const QuestionPage = ({data,setData,setAllPageData}) => {
 }
 
 export default QuestionPage
+  
